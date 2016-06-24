@@ -1,2 +1,13 @@
 # delta-app-dev-2
-initial commit
+initial commit-
+COMMANDS
+UP
+DOWN
+RIGHT
+LEFT
+LARGE
+SMALL
+MEDIUM
+SQUARE
+CIRCLE
+
