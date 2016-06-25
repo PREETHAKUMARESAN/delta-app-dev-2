@@ -5,17 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
-
 import android.widget.Toast;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 "" + "   4.LEFT for moving left    " + "" + "    5.SQUARE for chainging into a square    " +
                 "" + "  6.SMALL for a small size     " + "" + " 7.MEDIUM for a medium or defualt size    " +
                 "" + "  8.LARGE for a large size     " + "" + " 9.CIRCLE for changing back to default size    ");
-        alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setCancelable(false).setPositiveButton("READY", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -63,12 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.talk:
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id=item.getItemId();
+        if(id==R.id.talk)
                 displaySpeechRecognizer();
-                break;
-            default: Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_SHORT).show();
-        }return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     private void displaySpeechRecognizer() {
